@@ -10,7 +10,7 @@
 
 /* まず、style.cssにこのルールを書き入れてください。 */
 body {
-    font-size: 60%;
+    font-size: 100%;
     background-color:  var(--columbia-blue);
    
   }
@@ -64,6 +64,4 @@ h1 {
 #stickyTimer .timerButton {
     display: none;
     justify-content: space-around;
-    padding-left: "20px";
-    padding-right: "20px";
 }
