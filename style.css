@@ -1,0 +1,69 @@
+/* CSS HEX */
+:root {
+    --columbia-blue: #cae5ffff;
+    --non-photo-blue: #acedffff;
+    --jordy-blue: #89bbfeff;
+    --glaucous: #6f8ab7ff;
+    --davys-gray: #615d6cff;
+}
+
+
+/* まず、style.cssにこのルールを書き入れてください。 */
+body {
+    font-size: 60%;
+    background-color:  var(--columbia-blue);
+   
+  }
+  
+  /* ここにルールを足していきましょう。*/
+
+h1 {
+    text-align: center;
+    background-color: #89bbfeff;
+    /* color: var(--columbia-blue); */
+}
+
+#stickyTimer {
+    position: sticky;
+    bottom: 0;
+    left: 0;
+    background-color: var(--davys-gray);
+    color: white;
+    text-align: center;
+    display: none;
+}
+
+#whatYouNeed {
+    font-size: 100%;
+}
+
+#customMode {
+    background-color: var(--jordy-blue);
+    text-align: center;
+    padding: 10px;
+    margin: 10px;
+}
+
+#customMode h3 {
+    background-color: var(--non-photo-blue);
+}
+
+
+#riceVolume .numberInput {
+    text-align: right;
+}
+
+.notImplemented:disabled {
+    background: #ccc;
+}
+
+.recipe {
+    display: none;
+}
+
+#stickyTimer .timerButton {
+    display: none;
+    justify-content: space-around;
+    padding-left: "20px";
+    padding-right: "20px";
+}
