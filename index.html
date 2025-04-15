@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="theme-color" content="#000000">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <script defer type="text/javascript" src="script.js"></script>
+  <!-- https://coolors.co/cae5ff-acedff-89bbfe-6f8ab7-615d6c -->
+</head>
+
+<body>
+  <h1>NDA<br>
+     - Nabe Daki Assistant - </h1>
+  <div id="whatYouNeed">
+    <h2>準備するもの</h2>
+    <h3>道具</h3>
+    <ul>
+      <li>キッチンスケール</li>
+      <li>鍋(テフロン加工がおすすめ)</li>
+      <li>蓋(ガラス蓋を強く推奨)</li>
+      <li>水切り用のザル(あると便利)</li>
+      <li>ゴムべら(なくても可)</li>
+    </ul>
+    <h3>食材</h3>
+    <ul>
+      <li>おいしい水(浄水器の水やペットボトルの水)</li>
+      <li>白米</li>
+
+    </ul>
+  </div>
+
+  <div id="customMode">   
+    <h3>こだわり設定</h3>
+    <div>
+      <input type="radio" id="modeQuick" name="selectCommitment" value="quick" checked/>
+      <label for="modeQuick">時短</label>
+
+      <input type="radio" id="modeStandard" name="selectCommitment" value="standard"/>
+      <label for="modeStandard">標準</label>
+
+      <input type="radio" id="modeSlow" name="selectCommitment" value="slow"/>
+      <label for="modeSlow">こだわり</label>
+
+      <input type="radio" id="modeSlower" name="selectCommitment" value="slower"/>
+      <label for="modeSlower">超こだわり</label>
+    </div>
+
+    <div id="selectHardness">
+      <h3>お米の固さ</h3>
+      <div>
+        <input type="radio" id="riceSoft" name="hardnessOfRice" value="soft"/>
+        <label for="riceSoft">やわらか</label>
+  
+        <input type="radio" id="riceNormal" name="hardnessOfRice" value="normal" checked/>
+        <label for="riceNormal">ふつう</label>
+  
+        <input type="radio" id="riceHard" name="hardnessOfRice" value="hard" />
+        <label for="riceHard">かため</label>
+  
+        <input type="radio" id="friedRice" name="hardnessOfRice" value="friedRice" disabled/>
+        <label for="friedRice">チャーハン用</label>
+      </div>
+    </div>
+
+    <div id="riceVolume">
+        <h3>お米の分量 (1合 ≒ 150グラム)</h3>
+        <p><input
+        type="number"
+        required
+        min="1"
+        max="1500"
+        id="inputVolume"
+        class="numberInput"
+        />グラム</p>
+        <input
+        type="button"
+        onclick="setCommitment()"
+        value="分量セット"
+        />
+        <input
+        type="button"
+        value="やり直し"
+        onclick="window.location.reload(true);"
+        />
+    </div>   
+  </div>
+
+  <div class="recipe">
+    <h2><a id="preparation">下ごしらえ</a></h2>
+    <h3>計量(お米)</h3>
+    <ol>
+      <li>キッチンスケールに鍋を乗せる(風袋引き機能があれば使う)</li>
+        <ul>
+          <li>自動で電源が切れるタイプのキッチンスケールの場合は鍋の重量をメモしておく</li>
+        </ul>
+      <li id="riceAmount">お米を鍋に入れる</li>
+    </ol>
+    
+
+    <h3>研ぎ</h3>
+    <ol>
+      <li>鍋に(おいしい)水を入れてすぐに水を切る</li>
+      <li>鍋に水を入れて水を切る(2回目)</li>
+      <li id="washingRice">米を研ぐ拝み洗いをする(軽い力で1合あたり20回目安)</li>
+      <li>水を切る</li>
+    </ol>
+
+    <h3>計量(水)</h3>
+    <ol>
+      <li>鍋に研いだお米を入れる</li>
+      <li id="waterAmount">(おいしい)水を入れ重量がxxxxグラムになるようにあわせる</li>
+    </ol>
+    <label><input type="checkbox" id="cplRiceAmount" class="completeTask" value="米研ぎOK👌"/>米研ぎが終わったらチェック</label>
+
+    <h3><a id="soaking">浸水</a></h3>
+    <ul>
+      <li id="riceSoaking">時間は30分以上</li>
+    </ul>
+    <label><input type="checkbox" id="cplRiceSoaking" class="completeTask" value="浸水OK👌"/>浸水が終わったらチェック</label>
+  </div>
+
+  <div id="cookingRice"  class="recipe">
+    <h2><a id="cooking"></a>炊飯</a></h2>
+    <p></p>
+
+    <h3><a id="ignition">点火</a></h3>
+    <ol>
+      <li id="heatControl">中火にして10分で沸騰するような火加減を調整する</li>
+      <li>沸々してきたら蓋を開ける</li>
+      <li>ゴムべらで鍋底のお米を上にすくい上げるように撹拌する</li>
+      <ul>
+        <li>お米がダマになっているのでほぐれるぐらいが目安</li>
+      </ul>
+      <li id="burning">蓋をしてタイマーをセットする</li>
+      <li>泡が鍋の中で満たされそうになる手前で弱火にする</li>
+      <ul>
+        <li>IHコンロの場合は最弱より2段階目ぐらいが目安</li>
+      </ul>
+      <li>強火にしてパチパチ音がしたら火を止める</li>
+      <li id="steaming"><a id="ankSteaming"><b>蒸らす 絶対を蓋を開けないこと！</b></a></li>
+      <li>しゃもじで鍋に十字の切り込みを入れる</li>
+      <li>鍋底の蒸気を逃がすようにしゃもじで下から上へほぐす</li>
+        <ul>
+          <li>二郎系ラーメンでいうところの”天地返し”をして鍋底の蒸気を逃がす</li>
+          <li></li>
+        </ul>
+      <li>お茶碗に盛って召し上がれ🍚🍚🍚🍚</li>
+        <ul>
+          <li>保温ができないので今日中に食べれない分はタッパーに入れるかラップに包んで冷凍しましょう🍙🍙🍙🍙</li>
+        </ul>
+      
+    </ol>
+  </div>
+
+  <div id="stickyTimer">
+    <p class="commitment">設定内容</p>  
+    <p class="navigator"></p>
+    <p class="timeCounter">カウントダウン！</p>
+    
+    <!-- <div class="timerButton">
+      <input 
+      type="button"
+      value="再測定"
+      class="restart"
+      onclick="clearTimeout(countUpId);"
+      />
+      <input
+      type="button"
+      value="スタート"
+      class="start"
+      onclick="countUp(new Date())();"
+      />
+      <input
+      type="button"
+      value="次の工程へ"
+      id="btnNextProcces"
+      onclick="heatControlNext()"
+      />
+    </div> -->
+  </div>
+  
+</body>
+
+</html>
