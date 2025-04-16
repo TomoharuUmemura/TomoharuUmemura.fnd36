@@ -19,9 +19,9 @@ function test(actual, expected) {
 const objCommitment = {
   quick: {
     label:"時短", 
-    timeSoaking: 60 , 
-    timeBurning: 8, 
-    timeSteaming: 10 ,
+    timeSoaking: 0.1 , 
+    timeBurning: 0.2, 
+    timeSteaming: 0.3 ,
     washingRice: "米を研ぐ",
     waterAmount: "水",
     riceSoaking: "夏は30分以上 冬は60分以上浸水させる",
