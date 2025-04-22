@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja"> 
+<html lang="ja">
 
 <head>
   <meta charset="utf-8">
@@ -7,7 +7,8 @@
   <meta name="theme-color" content="#000000">
   <link rel="stylesheet" type="text/css" href="style.css" />
   <script defer type="text/javascript" src="script.js"></script>
-  <title>NDA🍚 ver1.0.1</title>
+  <!-- https://coolors.co/cae5ff-acedff-89bbfe-6f8ab7-615d6c -->
+   <title>NDA🍚 ver1.0.1</title>
 </head>
 
 <body>
@@ -34,8 +35,11 @@
   <div id="customMode">   
     <h3>こだわり設定</h3>
     <div>
+      <input type="radio" id="modeQuick" name="selectCommitment" value="demo" />
+      <label for="modeQuick">デモ用</label>
+
       <input type="radio" id="modeQuick" name="selectCommitment" value="quick" checked/>
-      <label for="modeQuick">時短(プレゼン用の超時短)</label>
+      <label for="modeQuick">時短</label>
 
       <input type="radio" id="modeStandard" name="selectCommitment" value="standard"/>
       <label for="modeStandard">標準</label>
@@ -155,6 +159,7 @@
   </div>
 
   <div id="stickyTimer">
+    <p class="labelNavi">Navigator</p>
     <p class="commitment">設定内容</p>  
     <p class="navigator"></p>
     <p class="timeCounter">カウントダウン！</p>
