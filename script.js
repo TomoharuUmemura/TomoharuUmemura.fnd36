@@ -17,11 +17,21 @@ function test(actual, expected) {
 
 // 設定の文言を定義する
 const objCommitment = {
+  demo: {
+    label:"デモ用", 
+    timeSoaking: 0.1 , 
+    timeBurning: 0.1, 
+    timeSteaming: 0.1 ,
+    washingRice: "米を研ぐ",
+    waterAmount: "水",
+    riceSoaking: "夏は30分以上 冬は60分以上浸水させる",
+    heatControl: "強火にする"
+  },
   quick: {
     label:"時短", 
-    timeSoaking: 0.1 , 
-    timeBurning: 0.2, 
-    timeSteaming: 0.3 ,
+    timeSoaking: 60 , 
+    timeBurning: 8, 
+    timeSteaming: 10 ,
     washingRice: "米を研ぐ",
     waterAmount: "水",
     riceSoaking: "夏は30分以上 冬は60分以上浸水させる",
