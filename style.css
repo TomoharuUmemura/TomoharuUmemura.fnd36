@@ -1,4 +1,4 @@
-/* CSS HEX */ 
+/* CSS HEX */
 :root {
     --columbia-blue: #cae5ffff;
     --non-photo-blue: #acedffff;
@@ -31,6 +31,21 @@ h1 {
     color: white;
     text-align: center;
     display: none;
+}
+
+#stickyTimer .labelNavi {
+    position: absolute;
+    display: inline-block;
+    top: -27px;
+    left: -3px;
+    padding: 0 9px;
+    height: 25px;
+    line-height: 25px;
+    font-size: 17px;
+    background: var(--glaucous);
+    color: #ffffff;
+    font-weight: bold;
+    border-radius: 5px 5px 0 0;
 }
 
 #whatYouNeed {
